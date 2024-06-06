@@ -1,17 +1,29 @@
 <x-app-layout>
-    <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
-    </x-slot>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    {{ __("You're logged in!") }}
+    <div class="col-md-9">
+                <div class="row">
+                    @if ($articles->isEmpty())
+                        <p class="col-12">No articles found</p>
+                    @else
+                        @foreach ($articles as $article)
+                            <div class="col-12 mb-4">
+                                <div class="news-item p-3 bg-white rounded shadow-sm">
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            @if (!empty($article->thumbnail))
+                                                <div class="image-container">
+                                                    <img src="{{ $article->thumbnail }}" alt="News Image" class="img-fluid rounded">
+                                                </div>
+                                            @endif
+                                        </div>
+                                        <div class="col-md-8">
+                                            <a href="{{ route('articles.show', $article->id) }}"><h5 class="news-title">{{ $article->title }}</h5></a>
+                                            <p class="news-content">{{ $article->shortcut }}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    @endif
                 </div>
             </div>
-        </div>
-    </div>
 </x-app-layout>

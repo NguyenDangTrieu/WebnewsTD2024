@@ -1,13 +1,9 @@
-@extends('admin.index')
-@section('content')
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soạn thảo bài báo</title>
-    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.tiny.cloud/1/ye8t257tht9gs3ddxpeb8bgtvxfx151d52chif8tim4s3wr3/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
     <script>
@@ -22,7 +18,8 @@
 <body>
     <div class="container">
         <h1>Soạn thảo bài báo</h1>
-        <form action="Save_article.php" method="post">
+        <form action="{{ route('save-article') }}" method="POST">
+            @csrf
             <div class="mb-3">
                 <input type="text" class="form-control" name="title" placeholder="Tiêu đề bài báo" required>
             </div>
@@ -47,12 +44,7 @@
             <button type="submit" class="btn btn-primary">Lưu bài báo</button>
         </form>
     </div>
-
-    <!-- Bootstrap JS và Popper.js -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 </body>
 </html>
-
-
-@endsection
