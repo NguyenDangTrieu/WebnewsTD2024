@@ -20,7 +20,7 @@ class CommentController extends Controller
         ]);
 
         $comment = Comment::create([
-            'user_id' => auth()->id(),
+            'user_id' => auth()->id(), // Make sure user is authenticated
             'article_id' => $request->article_id,
             'content' => $request->content,
             'created_at' => now(),
