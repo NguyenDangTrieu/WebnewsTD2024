@@ -6,40 +6,25 @@
                 <!-- Logo -->
                 <div class="shrink-0 flex items-center">
                     <a href="{{ route('dashboard') }}">
-                        <img src="https://giaoduc247.vn/uploads/082021/images/HUIT(1).jpeg" alt="Lgo">
+                        <img src="https://i.imgur.com/gyX0Hru.png"  class="block h-9 w-auto fill-current text-gray-800" />
                     </a>
                 </div>
 
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Trang Chủ') }}
-                    </x-nav-link>
+                    <a class="nav-link" href="{{ route('articles.index', ['category_id' => 1]) }}">Thời sự</a>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Thời Sự') }}
-                    </x-nav-link>
+                    <a class="nav-link" href="{{ route('articles.index', ['category_id' => 2]) }}">Thể thao</a> 
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Thể Thao') }}
-                    </x-nav-link>
+                    <a class="nav-link" href="{{ route('articles.index', ['category_id' => 3]) }}">Kinh doanh</a>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Kinh doanh') }}
-                    </x-nav-link>
+                    <a class="nav-link" href="{{ route('articles.index', ['category_id' => 4]) }}">Giáo dục</a>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Giáo Dục') }}
-                    </x-nav-link>
-                </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
-                    <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
-                        {{ __('Công Nghệ') }}
-                    </x-nav-link>
+                    <a class="nav-link" href="{{ route('articles.index', ['category_id' => 5]) }}">Công nghệ</a>
                 </div>
             </div>
 

@@ -49,29 +49,32 @@
             <div class="text-lg font-bold">
                 <a href="{{ url('/') }}" class="text-gray-800">WebnewsTD 2024</a>
             </div>
-            <nav>
-                <ul class="flex space-x-4">
-                    <!-- Hardcoded category links -->
-                    <li>
-                        <a href="#chinh-tri" class="text-gray-800 hover:text-gray-600 transition">Chính Trị</a>
-                    </li>
-                    <li>
-                        <a href="#the-thao" class="text-gray-800 hover:text-gray-600 transition">Thể Thao</a>
-                    </li>
-                    <li>
-                        <a href="#kinh-doanh" class="text-gray-800 hover:text-gray-600 transition">Kinh Doanh</a>
-                    </li>
-                    <li>
-                        <a href="#kinh-te" class="text-gray-800 hover:text-gray-600 transition">Kinh Tế</a>
-                    </li>
-                    <li>
-                        <a href="#cong-nghe" class="text-gray-800 hover:text-gray-600 transition">Công Nghệ</a>
-                    </li>
-                    <li>
-                        <a href="#quan-su" class="text-gray-800 hover:text-gray-600 transition">Quân Sự</a>
-                    </li>
-                </ul>
-            </nav>
+            <nav class="navbar navbar-expand-md navbar-dark scroll-nav" style="background-color: #FFFFFF;">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav" >
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('articles.index', ['category_id' => 1]) }}"style="color: black;">Thời sự</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('articles.index', ['category_id' => 2]) }}"style="color: black;">Thể thao</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('articles.index', ['category_id' => 3]) }}"style="color: black;">Kinh doanh</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('articles.index', ['category_id' => 4]) }}"style="color: black;">Giáo dục</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('articles.index', ['category_id' => 5]) }}"style="color: black;">Công nghệ</a>
+                </li>
+            </ul>
+        </div>
+            </div>
+        </nav>
             <div class="flex space-x-4 items-center">
                 <form action="/search" method="GET" class="relative">
                     <input type="text" name="query" placeholder="Search..." class="px-3 py-2 rounded-md border border-gray-300">
@@ -122,7 +125,7 @@
                                         <div class="trend-top-cap">
                                             <span class="bgr">{{ $article->category->name }}</span>
                                             <h2><a href="{{ route('articles.show', $article->id) }}">{{ $article->title }}</a></h2>
-                                            <p>by {{ $article->author_name }} - {{ $article->created_at->format('M d, Y') }}</p>
+                                            <p>by </p>
                                         </div>
                                     </div>
                                 </div>
@@ -148,7 +151,7 @@
                             <div class="trend-top-cap trend-top-cap2">
                                 <span class="bgb">{{ $article->category->name }}</span>
                                 <h2><a href="{{ route('articles.show', $article->id) }}">{{ $article->title }}</a></h2>
-                                <p>by {{ $article->author_name }} - {{ $article->created_at->format('M d, Y') }}</p>
+                                <p>by {{ $article->author_name }}</p>
                             </div>
                         </div>
                     </div>
